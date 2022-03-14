@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('show_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('title');
             $table->text('description');
             $table->string('status')->default('db col default');
 
