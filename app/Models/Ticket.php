@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ShowSlot extends Model
+class Ticket extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     public function show(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->BelongsTo(Show::class);
     }
 
-    public function tickets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function showSlot(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(Ticket::class);
+        return $this->BelongsTo(ShowSlot::class);
     }
 }

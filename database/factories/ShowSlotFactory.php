@@ -23,7 +23,7 @@ class ShowSlotFactory extends Factory
             'show_id' => \App\Models\Show::factory(),
             'venue_id' => \App\Models\Venue::factory(),
             'starts_at' => $carbon,
-            'ends_at' => $carbon->addHours(8),
+            'ends_at' => $carbon->copy()->addHours($this->faker->numberBetween(4,12)),
         ];
     }
 }

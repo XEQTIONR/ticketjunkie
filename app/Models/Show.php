@@ -16,8 +16,13 @@ class Show extends Model
         return $this->belongsTo(ShowType::class);
     }
 
-    public function slots(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function showSlots(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(ShowSlot::class);
+    }
+
+    public function tickets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Ticket::class);
     }
 }
