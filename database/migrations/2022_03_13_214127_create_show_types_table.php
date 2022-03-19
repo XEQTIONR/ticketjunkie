@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('status')->default('db col default');
+            $table->string('status')->default('created');
 
             $table->timestamps();
             $table->softDeletes();

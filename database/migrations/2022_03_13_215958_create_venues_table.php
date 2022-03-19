@@ -27,7 +27,7 @@ return new class extends Migration
             $table->decimal('lng', 8, 5)->nullable();
             $table->string('mapping_platform')->nullable();
             $table->string('mapping_platform_id')->nullable();
-            $table->string('status')->default('db col default');
+            $table->string('status')->default('created');
             $table->json('meta')->nullable();
 
             $table->timestamps();

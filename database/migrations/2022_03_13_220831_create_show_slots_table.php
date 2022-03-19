@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
+            $table->string('status')->default('created');
             $table->foreignId('show_id');
             $table->foreignId('venue_id')->nullable();
             $table->timestamp('starts_at');
@@ -24,10 +25,17 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('show_id')->references('id')
-                ->on('shows')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('venue_id')->references('id')
-                ->on('venues')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('show_id')
+                ->references('id')
+                ->on('shows')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('venue_id')
+                ->references('id')
+                ->on('venues')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
     }
 

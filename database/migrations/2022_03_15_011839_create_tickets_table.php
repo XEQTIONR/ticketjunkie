@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('confirmation_number', 32);
-            $table->string('status');
+            $table->string('status')->default('created');
             $table->string('type');
             $table->string('section')->nullable();
             $table->string('seat_number')->nullable();
