@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Organizer;
 use App\Models\Show;
 use App\Models\ShowSlot;
 use App\Models\Ticket;
@@ -17,8 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Show::factory(10)
-            ->has(
+
+        Organizer::factory(10)->has(
+            Show::factory()->has(
                 ShowSlot::factory(2)->has(
                     Ticket::factory()
                         ->count(10)
@@ -29,7 +31,8 @@ class DatabaseSeeder extends Seeder
                             ];
                         })
                 ),
-                'showSlots')
+            'showSlots'),
+        'shows')
             ->create();
     }
 }

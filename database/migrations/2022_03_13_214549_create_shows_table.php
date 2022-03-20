@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->text('description')->nullable();
+            $table->text('type')->nullable();
+            $table->string('banner')->nullable();
             $table->string('status')->default('created');
             $table->foreignId('show_type_id')->nullable();
+            $table->foreignId('organizer_id');
             $table->json('meta')->nullable();
 
             $table->timestamps();
@@ -28,6 +31,12 @@ return new class extends Migration
             $table->foreign('show_type_id')
                 ->references('id')
                 ->on('show_types')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
+
+            $table->foreign('organizer_id')
+                ->references('id')
+                ->on('organizers')
                 ->onDelete('restrict')
                 ->onUpdate('cascade');
         });
