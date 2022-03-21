@@ -27,8 +27,15 @@ return new class extends Migration
             $table->string('bank_name')->nullable();
             $table->string('bank_account_number')->nullable();
             $table->string('status')->default('created');
+            $table->foreignId('created_by');
             $table->json('meta')->nullable();
             $table->timestamps();
+
+            $table->foreign('created_by')
+                ->references('id')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
     }
 

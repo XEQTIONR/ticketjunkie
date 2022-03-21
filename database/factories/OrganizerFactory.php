@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,6 +28,7 @@ class OrganizerFactory extends Factory
             'bank_name' => $this->faker->company() . ' Bank',
             'bank_account_number' => $this->faker->numerify('##########'),
             'status' => 'created',
+            'created_by' => User::factory(),
         ];
     }
 }

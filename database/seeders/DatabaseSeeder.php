@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\OrderContent;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Organizer;
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
                                 'show_id' => $slot->show->id
                             ];
                         })
+                        ->has(OrderContent::factory())
                 ),
             'showSlots'),
         'shows')
