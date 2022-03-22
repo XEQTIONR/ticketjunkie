@@ -24,7 +24,6 @@ return new class extends Migration
             $table->foreignId('show_id');
             $table->foreignId('show_slot_id');
             $table->foreignId('belongs_to_id');
-            $table->foreignId('created_by_id');
             $table->json('meta')->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -34,8 +33,6 @@ return new class extends Migration
             $table->foreign('show_slot_id')->references('id')->on('show_slots')
                 ->onDelete('restrict')->onUpdate('cascade');
             $table->foreign('belongs_to_id')->references('id')->on('users')
-                ->onDelete('restrict')->onUpdate('cascade');
-            $table->foreign('created_by_id')->references('id')->on('users')
                 ->onDelete('restrict')->onUpdate('cascade');
         });
     }

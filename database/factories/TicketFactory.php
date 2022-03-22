@@ -26,7 +26,6 @@ class TicketFactory extends Factory
             'show_id' => \App\Models\Show::factory(),
             'show_slot_id' => \App\Models\ShowSlot::factory(),
             'belongs_to_id' => \App\Models\User::factory(),
-            'created_by_id' => \App\Models\User::factory(),
         ];
     }
 }

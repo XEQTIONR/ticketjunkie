@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Order;
 use App\Models\Ticket;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,9 +19,10 @@ class OrderContentFactory extends Factory
      */
     public function definition()
     {
+        $user = User::factory();
         return [
-            'order_id' => Order::factory(),
-            'ticket_id' => Ticket::factory(),
+            'order_id' => Order::factory()->state([ 'customer_id' => $user]),
+            //'ticket_id' => Ticket::factory()->state([ 'belongs_to_id' => $user]),
             'price' => $this->faker->randomNumber(5, true)
         ];
     }

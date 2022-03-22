@@ -17,6 +17,6 @@ class OrderContent extends Model
 
     public function ticket() : BelongsTo
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->belongsTo(Ticket::class, 'belongs_to_id');
     }
 }
