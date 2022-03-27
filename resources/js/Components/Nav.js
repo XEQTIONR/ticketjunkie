@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ReactSVG } from 'react-svg'
 import {Link} from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import NavLink from "@/Components/NavLink";
@@ -15,15 +16,35 @@ export default function Nav({auth}) {
                     <div className="flex">
                         <div className="shrink-0 flex items-center">
                             <Link href="/">
-                                <ApplicationLogo className="block h-9 w-auto text-gray-500" />
+                                <ApplicationLogo className="hidden sm:block h-9 w-auto text-gray-500" />
                             </Link>
                         </div>
 
-                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <div className=" space-x-8 sm:-my-px sm:ml-10 flex">
                             <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                Dashboard
+                                <ReactSVG className={'text-2xl'} src={'/images/search.svg'}/>
+                                Search
                             </NavLink>
                         </div>
+                        <div className=" space-x-8 sm:-my-px sm:ml-10 flex">
+                            <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <ReactSVG className={'text-2xl'} src={'/images/heart.svg'}/>
+                                Favorites
+                            </NavLink>
+                        </div>
+                        <div className=" space-x-8 sm:-my-px sm:ml-10 flex">
+                            <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <ReactSVG className={'text-2xl'} src={'/images/ticket.svg'}/>
+                                My Events
+                            </NavLink>
+                        </div>
+                        <div className=" space-x-8 sm:-my-px sm:ml-10 flex">
+                            <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <ReactSVG className={'text-2xl'} src={'/images/user.svg'}/>
+                                My Account
+                            </NavLink>
+                        </div>
+
                     </div>
 
                     <div className="hidden sm:flex sm:items-center sm:ml-6">
@@ -55,7 +76,7 @@ export default function Nav({auth}) {
 
                                 <Dropdown.Content>
                                     <Dropdown.Link href={route('logout')} method="post" as="button">
-                                        Log Out
+                                        Log Out 1
                                     </Dropdown.Link>
                                 </Dropdown.Content>
                             </Dropdown>
