@@ -8,7 +8,7 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 export default function Nav({auth}) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     return (
-        <nav className={(showingNavigationDropdown ? 'h-full' : '')
+        <nav className={(showingNavigationDropdown ? 'h-full ' : '')
         + "bg-white border-b border-gray-100 fixed md:sticky bottom-0 md:top-0 w-full "}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
