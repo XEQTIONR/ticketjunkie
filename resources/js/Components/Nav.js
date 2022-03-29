@@ -10,7 +10,7 @@ export default function Nav({auth}) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     return (
         <>
-        <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
+        <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' md:hidden'}>
             <div className="pt-2 pb-3 space-y-1">
                 <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                     Dashboard
@@ -35,39 +35,39 @@ export default function Nav({auth}) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16">
                     <div className="flex justify-around w-full">
-                        <div className="shrink-0 hidden sm:flex items-center">
+                        <div className="shrink-0 hidden md:flex items-center">
                             <Link href="/">
                                 <ApplicationLogo className="hidden sm:block h-9 w-auto text-gray-500" />
                             </Link>
                         </div>
 
                         <div className="sm:-my-px sm:ml-10 flex items-center">
-                            <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                <ReactSVG className={'text-2xl'} src={'/images/search.svg'}/>
+                            <NavLink href={route('dashboard')} active={route().current('dashboard')} onClick={() => setShowingNavigationDropdown(false)}>
+                                <ReactSVG className={'text-2xl md:hidden'} src={'/images/search.svg'}/>
                                 Search
                             </NavLink>
                         </div>
                         <div className="sm:-my-px sm:ml-10 flex items-center">
-                            <NavLink href={route('dashboard')} >
-                                <ReactSVG className={'text-2xl'} src={'/images/heart.svg'}/>
+                            <NavLink href={route('dashboard')} onClick={() => setShowingNavigationDropdown(false)}>
+                                <ReactSVG className={'text-2xl md:hidden'} src={'/images/heart.svg'}/>
                                 Favorites
                             </NavLink>
                         </div>
                         <div className="sm:-my-px sm:ml-10 flex items-center">
-                            <NavLink href={route('dashboard')} >
-                                <ReactSVG className={'text-2xl'} src={'/images/ticket.svg'}/>
+                            <NavLink href={route('dashboard')} onClick={() => setShowingNavigationDropdown(false)}>
+                                <ReactSVG className={'text-2xl md:hidden'} src={'/images/ticket.svg'}/>
                                 My Events
                             </NavLink>
                         </div>
-                        <div className="sm:-my-px sm:ml-10 flex flex-col justify-center items-center">
-                                <ReactSVG className={'text-2xl'} src={'/images/user.svg'}
-                                          onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
-                                />
-                                Account
+                        <div className="sm:-my-px sm:ml-10 flex md:hidden flex-col justify-center items-center">
+                            <ReactSVG className={'text-2xl md:hidden'} src={'/images/user.svg'}
+                                      onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
+                            />
+                            Account
                         </div>
                     </div>
 
-                    <div className="hidden sm:flex sm:items-center sm:ml-6">
+                    <div className="hidden md:flex sm:items-center sm:ml-6">
                         <div className="ml-3 relative">
                             <Dropdown>
                                 <Dropdown.Trigger>

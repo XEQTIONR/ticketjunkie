@@ -5015,7 +5015,7 @@ function Nav(_ref) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: (showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden',
+      className: (showingNavigationDropdown ? 'block' : 'hidden') + ' md:hidden',
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "pt-2 pb-3 space-y-1",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -5053,7 +5053,7 @@ function Nav(_ref) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "flex justify-around w-full",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              className: "shrink-0 hidden sm:flex items-center",
+              className: "shrink-0 hidden md:flex items-center",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
                 href: "/",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5065,8 +5065,11 @@ function Nav(_ref) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 href: route('dashboard'),
                 active: route().current('dashboard'),
+                onClick: function onClick() {
+                  return setShowingNavigationDropdown(false);
+                },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_svg__WEBPACK_IMPORTED_MODULE_1__.ReactSVG, {
-                  className: 'text-2xl',
+                  className: 'text-2xl md:hidden',
                   src: '/images/search.svg'
                 }), "Search"]
               })
@@ -5074,8 +5077,11 @@ function Nav(_ref) {
               className: "sm:-my-px sm:ml-10 flex items-center",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 href: route('dashboard'),
+                onClick: function onClick() {
+                  return setShowingNavigationDropdown(false);
+                },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_svg__WEBPACK_IMPORTED_MODULE_1__.ReactSVG, {
-                  className: 'text-2xl',
+                  className: 'text-2xl md:hidden',
                   src: '/images/heart.svg'
                 }), "Favorites"]
               })
@@ -5083,15 +5089,18 @@ function Nav(_ref) {
               className: "sm:-my-px sm:ml-10 flex items-center",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 href: route('dashboard'),
+                onClick: function onClick() {
+                  return setShowingNavigationDropdown(false);
+                },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_svg__WEBPACK_IMPORTED_MODULE_1__.ReactSVG, {
-                  className: 'text-2xl',
+                  className: 'text-2xl md:hidden',
                   src: '/images/ticket.svg'
                 }), "My Events"]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "sm:-my-px sm:ml-10 flex flex-col justify-center items-center",
+              className: "sm:-my-px sm:ml-10 flex md:hidden flex-col justify-center items-center",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_svg__WEBPACK_IMPORTED_MODULE_1__.ReactSVG, {
-                className: 'text-2xl',
+                className: 'text-2xl md:hidden',
                 src: '/images/user.svg',
                 onClick: function onClick() {
                   return setShowingNavigationDropdown(function (previousState) {
@@ -5101,7 +5110,7 @@ function Nav(_ref) {
               }), "Account"]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "hidden sm:flex sm:items-center sm:ml-6",
+            className: "hidden md:flex sm:items-center sm:ml-6",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "ml-3 relative",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_5__["default"], {
