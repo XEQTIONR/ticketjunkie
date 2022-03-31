@@ -16,7 +16,7 @@ class ShowSlotFactory extends Factory
      */
     public function definition()
     {
-        $carbon = Carbon::parse($this->faker->dateTime());
+        $carbon = Carbon::parse($this->faker->dateTimeThisYear('+12 months'));
         return [
             'name' => strval( $this->faker->randomNumber( 1, true) ),
             'description' => $this->faker->paragraph(),
