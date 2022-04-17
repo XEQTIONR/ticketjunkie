@@ -9,15 +9,14 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class HomepageController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : parent | \Inertia\Response
     {
         //
         $venues = DB::table('venues')
@@ -27,10 +26,10 @@ class HomepageController extends Controller
 
 
         // upcoming shows ordered by the slot dates.
-        $shows = Show::with(['showSlots' => function ($query) {
+        $shows = Show::with(['slots' => function ($query) {
             $query->where('starts_at', '>', Carbon::now())
                 ->orderBy('starts_at');
-        }, 'showSlots.venue'])->whereHas('showSlots', function (Builder $query) {
+        }, 'slots.venue', 'type'])->whereHas('slots', function (Builder $query) {
                 $query->where('starts_at', '>', Carbon::now());
         })
             ->orderBy(
