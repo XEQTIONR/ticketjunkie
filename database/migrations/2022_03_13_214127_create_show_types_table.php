@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->string('banner')->nullable();
             $table->string('status')->default('created');
 
             $table->timestamps();

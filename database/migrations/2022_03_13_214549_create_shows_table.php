@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->text('type')->nullable();
             $table->string('banner')->nullable();
             $table->string('status')->default('created');
             $table->foreignId('show_type_id')->nullable();

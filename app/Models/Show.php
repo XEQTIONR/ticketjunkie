@@ -20,10 +20,10 @@ class Show extends Model
 
     public function type(): BelongsTo
     {
-        return $this->belongsTo(ShowType::class);
+        return $this->belongsTo(ShowType::class, 'show_type_id');
     }
 
-    public function showSlots(): HasMany
+    public function slots(): HasMany
     {
         return $this->hasMany(ShowSlot::class);
     }

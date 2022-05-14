@@ -13,6 +13,6 @@ class ShowType extends Model
 
     public function shows(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(ShowType::class);
+        return $this->hasMany(Show::class);
     }
 }
