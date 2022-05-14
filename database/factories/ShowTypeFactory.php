@@ -21,6 +21,7 @@ class ShowTypeFactory extends Factory
                 ($this->faker->randomNumber(1)%2 + 1),
                 true)
             ),
+            'banner' => $this->faker->imageUrl(640,480),
             'description' => $this->faker->paragraph(),
             'status' => 'created',
         ];

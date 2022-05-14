@@ -30,7 +30,7 @@ export default function Nav({auth}) {
                 </div>
             </div>
         </div>
-        <nav className="bg-white border-b border-gray-100 fixed md:sticky bottom-0 md:top-0 w-full ">
+        <nav className="z-10 bg-white border-b border-gray-100 fixed md:sticky bottom-0 md:top-0 w-full ">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16">

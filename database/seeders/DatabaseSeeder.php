@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $types = ShowType::factory()
-            ->count(2)
+            ->count(4)
             ->create()
             ->map(function ($item) {
             return ['show_type_id' => $item->id];
@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
 
         Organizer::factory(10)->has(
             Show::factory()
+                ->count(4)
                 ->state(new Sequence( ...$types ))
                 ->has(
                 ShowSlot::factory(2)->has(
@@ -39,7 +40,8 @@ class DatabaseSeeder extends Seeder
                         ->state(fn(array $attr, ShowSlot $slot) => ['show_id' => $slot->show->id])->has(
                             OrderContent::factory()
                                 ->state(fn(array $attr, Ticket $ticket) => ['order_id' => Order::factory()
-                                        ->state(['customer_id' => $ticket->belongs_to_id])])
+                                    ->state(['customer_id' => $ticket->belongs_to_id])
+                                ])
                         )
                 ),
             'slots'),

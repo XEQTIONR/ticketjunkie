@@ -15,8 +15,10 @@ class HomepageController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return array
      */
-    public function index() : parent | \Inertia\Response
+    public function index()
     {
         //
         $venues = DB::table('venues')

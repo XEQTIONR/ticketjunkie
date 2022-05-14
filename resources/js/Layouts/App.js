@@ -9,7 +9,8 @@ import { Link } from '@inertiajs/inertia-react';
 export default function App({ auth, header, children }) {
     return (
         <div className="min-h-screen bg-gray-100">
-            <Nav auth={auth}/>
+
+            {auth.user && (<Nav auth={auth}/>)}
 
             {header && (
                 <header className="bg-white shadow">

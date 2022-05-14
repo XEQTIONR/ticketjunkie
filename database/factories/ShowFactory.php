@@ -21,7 +21,7 @@ class ShowFactory extends Factory
             'name' => $this->faker->catchPhrase(),
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
-            'banner' => $this->faker->imageUrl(640,480, 'banner'),
+            'banner' => $this->faker->imageUrl(640,480),
             'status' => 'created',
             'show_type_id' => \App\Models\ShowType::factory(),
         ];
